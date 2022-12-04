@@ -24,7 +24,7 @@ Check out the cli tool:
 ```shell
 python -m aoc --help
 ```
-![image](https://user-images.githubusercontent.com/83985775/205521921-e5b9c3df-4454-4c43-a57d-1249e76ac760.png)
+![image](https://user-images.githubusercontent.com/83985775/205521984-2eb9d642-b334-495d-b0a3-f4764c8f33c2.png)
 
 ## aoc2022
 

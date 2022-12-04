@@ -13,10 +13,10 @@ def view_solution(day):
     try:
         klass = getattr(aoc2022, class_name)
         part_one, part_two = solutionizer(klass())
-        print("=*="*20)
+        print("=*=" * 20)
         print(f"{class_name} Part 1", part_one)
         print(f"{class_name} Part 2", part_two)
-        print("=*="*20)
+        print("=*=" * 20)
     except AttributeError:
         pass
 

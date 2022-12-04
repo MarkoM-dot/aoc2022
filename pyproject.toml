@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "aoc2022"
+version = "0.1.0"
+description = ""
+authors = ["MarkoM-dot <83985775+MarkoM-dot@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+isort = "^5.10.1"
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -34,6 +34,7 @@ easier to sumbit solutions via the command line. Check it out in the familiar wa
 ```shell
 python -m aoc2022 -h
 ```
+![image](https://user-images.githubusercontent.com/83985775/205522077-81706718-63cd-43ae-97f7-83a61941e327.png)
 
 ## tests
 
@@ -57,8 +58,10 @@ see if the potential solutions provided in `aoc2022` run or not.
 
 2. Check out the puzzle question:
 ```shell
-python -m aoc 1 question
+python -m aoc 3 question
 ```
+
+![image](https://user-images.githubusercontent.com/83985775/205522107-ce1a1c92-0b69-4202-b932-9c0a36a95290.png)
 
 3. Write a test in the the `tests` folder. Run the tests and watch them fail.
 
@@ -69,7 +72,7 @@ file... I've automated the boring stuff.
 
 6. Fetch the puzzle input:
 ```shell
-python -m aoc 1 data
+python -m aoc 3 data
 ```
 
 7. Check to see if your data folder is populated with some puzzle data. Remember the path,
@@ -77,8 +80,10 @@ you'll need it for your solution class.
 
 8. Run the `aoc` module and check your answer.
 ```shell
-python -m aoc2022 --day 1
+python -m aoc2022 --day 3
 ```
+
+![image](https://user-images.githubusercontent.com/83985775/205522183-5357d4fb-a461-464c-9f4e-b494f56fa2ff.png)
 
 9. If you are happy with what you've got. It's time to submit what you see.
 ```shell

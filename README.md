@@ -29,7 +29,7 @@ python -m aoc --help
 ## aoc2022
 
 The `aoc2022` module has been turned into a cli tool to quickly view answers making it
-easier to sumbit solutions via the command line. Check it out in the familiar way:
+easier to submit solutions via the command line. Check it out in the familiar way:
 
 ```shell
 python -m aoc2022 -h
@@ -54,7 +54,7 @@ see if the potential solutions provided in `aoc2022` run or not.
 ## Methodology
 
 1. Get the value of your session cookie by visiting the site and store this value in a
-`.cookie` file -- never commit this to source control, it should be gitignored anyway.
+`.cookie` file -- never commit this to version control, it should be gitignored anyway.
 
 2. Check out the puzzle question:
 ```shell
@@ -92,7 +92,7 @@ python -m aoc 1 submit <answer> --part 1
 
 10. Read the response in the terminal. If you've submitted a successful soluion, you may 
 now kiss... uh, check out the question again. You will see the second part of the puzzle.
-If you are done with part two just increment the day. Rinse and repeat from part 2.
+If you are done with part two just increment the day. Go back to step 2 and rinse and repeat.
 ```shell
 python -m aoc 1 question
 ```

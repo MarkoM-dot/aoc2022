@@ -61,7 +61,7 @@ see if the potential solutions provided in `aoc2022` run or not.
 python -m aoc 3 question
 ```
 
-![image](https://user-images.githubusercontent.com/83985775/205522107-ce1a1c92-0b69-4202-b932-9c0a36a95290.png)
+![image](https://user-images.githubusercontent.com/83985775/205522247-a2f3ff71-0ecc-493a-9212-9376b9e11c4b.png)
 
 3. Write a test in the the `tests` folder. Run the tests and watch them fail.
 

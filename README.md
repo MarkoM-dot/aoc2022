@@ -90,7 +90,7 @@ python -m aoc2022 --day 3
 python -m aoc 1 submit <answer> --part 1
 ```
 
-10. Read the response in the terminal. If you've submitted a successful soluion, you may 
+10. Read the response in the terminal. If you've submitted a successful solution, you may 
 now kiss... uh, check out the question again. You will see the second part of the puzzle.
 If you are done with part two just increment the day. Go back to step 2 and rinse and repeat.
 ```shell

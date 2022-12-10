@@ -1,6 +1,6 @@
 import unittest
 
-from aoc2022.day1 import DayThree
+from aoc2022.day3 import DayThree
 
 part_one_data = (
     (
@@ -53,7 +53,7 @@ class TestDayThree(unittest.TestCase):
                 second_compartment=second_compartment,
             ):
                 self.assertEqual(
-                    self.solver.split_ricksack(input),
+                    self.solver.split_rucksack(input),
                     (first_compartment, second_compartment),
                 )
 

@@ -8,8 +8,8 @@ from .solution_template import solutionizer
 from .translations import index_to_word
 
 
-def view_solution(day: int):
-    class_name = f"Day{index_to_word[day]}"
+def view_solution(num_day: str):
+    class_name = f"Day{num_day}"
     try:
         klass = getattr(aoc2022, class_name)
         part_one, part_two = solutionizer(klass())
@@ -23,10 +23,9 @@ def view_solution(day: int):
 
 def action(day: int):
     if day:
-        view_solution(day)
+        view_solution(index_to_word[day])
     else:
-        for index, value in enumerate(index_to_word):
-            view_solution(index)
+        [view_solution(day) for day in index_to_word]
 
 
 def aoc_day(day: str) -> int:
@@ -58,6 +57,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
 
     args = vars(parser.parse_args(argv))
-    action(*args)
+    action(**args)
 
     return SUCCESS

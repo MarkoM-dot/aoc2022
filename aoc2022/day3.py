@@ -19,6 +19,9 @@ class DayThree(SolutionClass):
         )
         return first_compartment, second_compartment
 
+    def find_common_items(self, first_compartment: str, second_compartment: str) -> set[str]:
+        return {letter for letter in first_compartment if letter in second_compartment}
+
     def part_one(self, data: str) -> int:
         ...
 

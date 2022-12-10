@@ -24,10 +24,10 @@ part_one_item_priorities = (
     ("s", 19),
 )
 
-part_one_common_item = (
-    ("vJrwpWtwJgWr", "hcsFMMfFFhFp", "p"),
-    ("jqHRNqRjqzjGDLGL", "rsFMfFZSrLrFZsSL", "L"),
-    ("PmmdzqPrV", "vPwwTWBwg", "P"),
+part_one_common_items = (
+    ("vJrwpWtwJgWr", "hcsFMMfFFhFp", {"p"}),
+    ("jqHRNqRjqzjGDLGL", "rsFMfFZSrLrFZsSL", {"L"}),
+    ("PmmdzqPrV", "vPwwTWBwg", {"P"}),
 )
 
 
@@ -62,8 +62,8 @@ class TestDayThree(unittest.TestCase):
             with self.subTest("Test item priorities given types..."):
                 self.assertEqual(self.solver.item_priority(input), expected)
 
-    def test_find_common_item(self):
-        for first_compartment, second_compartment, expected in part_one_common_item:
+    def test_find_common_items(self):
+        for first_compartment, second_compartment, expected in part_one_common_items:
             with self.subTest(
                 "Test find common item in compartments...",
                 first_compartment=first_compartment,
@@ -71,6 +71,6 @@ class TestDayThree(unittest.TestCase):
                 expected=expected,
             ):
                 self.assertEqual(
-                    self.solver.find_common_item(first_compartment, second_compartment),
+                    self.solver.find_common_items(first_compartment, second_compartment),
                     expected,
                 )

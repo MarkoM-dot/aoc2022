@@ -15,7 +15,7 @@ class TestDayTwo(unittest.TestCase):
     def setUp(self) -> None:
         self.solver = DayTwo()
 
-    def test_strategy(self):
+    def test_part_one(self):
         for input, expected in data_part_one:
             with self.subTest(
                 "Testing Rock, Paper, Scissors strategies...",
@@ -24,7 +24,7 @@ class TestDayTwo(unittest.TestCase):
             ):
                 self.assertEqual(self.solver.part_one(input), expected)
 
-    def test_forcing_stratedy(self):
+    def test_part_two(self):
         for input, expected in data_part_two:
             with self.subTest(
                 "Testing forcing moves...", input=input, expected=expected

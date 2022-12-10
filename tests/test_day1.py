@@ -18,14 +18,14 @@ class TestDayOne(unittest.TestCase):
     def setUp(self) -> None:
         self.solver = DayOne()
 
-    def test_find_elf_with_highest_calories(self):
+    def test_part_one(self):
         for input, expected in data_part_one:
             with self.subTest(
                 "Testing highest calories...", input=input, expected=expected
             ):
                 self.assertEqual(self.solver.part_one(input), expected)
 
-    def test_find_three_highest_sum(self):
+    def test_part_two(self):
         for input, expected in data_part_two:
             with self.subTest(
                 "Testing sum of three highest calories...",

@@ -4,6 +4,7 @@ from .solution_template import SolutionClass
 
 Section = tuple[int, int]
 
+Sections = list[Section]
 
 class DayFour(SolutionClass):
     @property
@@ -20,15 +21,17 @@ class DayFour(SolutionClass):
 
         return False
 
-    def part_one(self, data: str) -> int:
-        sections = [
+    def get_sections(self, data: str) -> list[Sections]:
+        return [
             [
                 tuple(int(section) for section in assignment.split("-"))
                 for assignment in line.split(",")
             ]
             for line in data.splitlines()
         ]
-        return sum(self.fully_contains(*section) for section in sections)
+
+    def part_one(self, data: str) -> int:
+        return sum(self.fully_contains(*section) for section in self.get_sections(data))
 
     def part_two(self, data: str) -> int:
         ...

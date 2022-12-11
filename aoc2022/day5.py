@@ -24,9 +24,12 @@ class StackCollection:
             if not letter.isspace():
                 self[index].appendleft(letter)
 
-    def move(self, amount: int, origin: int, target: int):
-        for _ in range(amount):
-            self[target].append(self[origin].pop())
+    def crate_move_9000(self, amount: int, origin: int, target: int):
+        self[target].extend([self[origin].pop() for _ in range(amount)])
+
+    def crate_move_9001(self, amount: int, origin: int, target: int):
+        temp = [self[origin].pop() for _ in range(amount)]
+        self[target].extend([item for item in temp[::-1]])
 
     @property
     def mass_peek(self) -> list[str]:
@@ -64,9 +67,16 @@ class DayFive(SolutionClass):
 
         for instruction in instruction_set.splitlines():
             movement = self.parse_instruction(instruction.split())
-            stacks.move(*movement)
+            stacks.crate_move_9000(*movement)
 
         return "".join(stacks.mass_peek)
 
-    def part_two(self, data: str) -> int:
-        return super().part_two(data)
+    def part_two(self, data: str) -> str:
+        drawing, instruction_set = data.split("\n\n")
+        stacks = self.init_configuration(drawing.splitlines())
+
+        for instruction in instruction_set.splitlines():
+            movement = self.parse_instruction(instruction.split())
+            stacks.crate_move_9001(*movement)
+
+        return "".join(stacks.mass_peek)

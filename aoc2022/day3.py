@@ -42,7 +42,9 @@ class DayThree(SolutionClass):
         )
 
     def unique_item(self, first, second, third) -> set[str]:
-        return self.find_common_items(first, second).intersection(self.find_common_items(second, third))
+        return self.find_common_items(first, second).intersection(
+            self.find_common_items(second, third)
+        )
 
     def part_two(self, data: str) -> int:
         sack = iter(data.splitlines())

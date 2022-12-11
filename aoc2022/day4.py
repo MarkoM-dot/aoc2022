@@ -24,6 +24,11 @@ class DayFour(SolutionClass):
     def pairs_overlap(self, first_section: Section, second_section: Section) -> bool:
         min_one, max_one = first_section
         min_two, max_two = second_section
+
+        if max_one >= min_two and max_two >= min_one:
+            return True
+
+        return False
  
 
     def get_sections(self, data: str) -> list[Sections]:

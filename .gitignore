@@ -129,6 +129,9 @@ env.bak/
 venv.bak/
 .cookie
 
+
+data/
+
 # Spyder project settings
 .spyderproject
 .spyproject

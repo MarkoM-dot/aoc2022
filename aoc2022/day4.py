@@ -6,6 +6,7 @@ Section = tuple[int, int]
 
 Sections = list[Section]
 
+
 class DayFour(SolutionClass):
     @property
     def data_path(self) -> Path:
@@ -29,7 +30,6 @@ class DayFour(SolutionClass):
             return True
 
         return False
- 
 
     def get_sections(self, data: str) -> list[Sections]:
         return [

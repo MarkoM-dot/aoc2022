@@ -39,7 +39,7 @@ class TestDayFour(unittest.TestCase):
                 self.assertEqual(self.solver.part_one(input), expected)
 
     def test_part_two(self):
-         for input, expected in part_two_data:
+        for input, expected in part_two_data:
             with self.subTest(
                 "Testing assignment pairs overlap...",
                 input=input,
@@ -56,5 +56,7 @@ class TestDayFour(unittest.TestCase):
 
     def test_pairs_overlap(self):
         for input, expected in pairs_data:
-            with self.subTest("Testing overlap method...", input=input, expected=expected):
+            with self.subTest(
+                "Testing overlap method...", input=input, expected=expected
+            ):
                 self.assertEqual(self.solver.pairs_overlap(*input), expected)

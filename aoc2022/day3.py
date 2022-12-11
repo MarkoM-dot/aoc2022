@@ -41,7 +41,7 @@ class DayThree(SolutionClass):
             for compartment in compartments
         )
 
-    def unique_item(self, first, second, third) -> set[str]:
+    def unique_item(self, first: str, second: str, third: str) -> set[str]:
         return self.find_common_items(first, second).intersection(
             self.find_common_items(second, third)
         )

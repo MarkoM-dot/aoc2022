@@ -1,5 +1,4 @@
 import unittest
-from collections import deque
 
 from aoc2022.day5 import DayFive, StackCollection
 
@@ -30,17 +29,20 @@ class TestDayFive(unittest.TestCase):
     def test_part_one(self):
         for input, expected in part_one_data:
             with self.subTest(
-                "Testing peeking each stack rearranged by CrateMover 9000...", input=input, expected=expected
+                "Testing peeking each stack rearranged by CrateMover 9000...",
+                input=input,
+                expected=expected,
             ):
                 self.assertEqual(self.solver.part_one(input), expected)
 
     def test_part_two(self):
         for input, expected in part_two_data:
             with self.subTest(
-                "Testing peeking each stack rearranged by CrateMover9001...", input=input, expected=expected
+                "Testing peeking each stack rearranged by CrateMover9001...",
+                input=input,
+                expected=expected,
             ):
                 self.assertEqual(self.solver.part_two(input), expected)
-
 
     def test_get_stack_quantity(self):
         for input, expected in drawing_to_stack_quantity:

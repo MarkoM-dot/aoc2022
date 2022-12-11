@@ -41,13 +41,10 @@ class DayThree(SolutionClass):
             for compartment in compartments
         )
 
+    def unique_item(self, first, second, third) -> set[str]:
+        return self.find_common_items(first, second).intersection(self.find_common_items(second, third))
+
     def part_two(self, data: str) -> int:
         sack = iter(data.splitlines())
-        items = []
-        for first, second, third in zip(sack, sack, sack):
-            unique_item = self.find_common_items(first, second).intersection(
-                self.find_common_items(second, third)
-            )
-            items.append(self.item_priority(*unique_item))
-
-        return sum(items)
+        uniques = [self.unique_item(*triplets) for triplets in zip(sack, sack, sack)]
+        return sum(self.item_priority(*unique) for unique in uniques)

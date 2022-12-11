@@ -21,6 +21,11 @@ class DayFour(SolutionClass):
 
         return False
 
+    def pairs_overlap(self, first_section: Section, second_section: Section) -> bool:
+        min_one, max_one = first_section
+        min_two, max_two = second_section
+ 
+
     def get_sections(self, data: str) -> list[Sections]:
         return [
             [
@@ -34,4 +39,4 @@ class DayFour(SolutionClass):
         return sum(self.fully_contains(*section) for section in self.get_sections(data))
 
     def part_two(self, data: str) -> int:
-        ...
+        return sum(self.pairs_overlap(*section) for section in self.get_sections(data))

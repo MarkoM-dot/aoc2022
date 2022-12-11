@@ -1,6 +1,7 @@
 import unittest
+from collections import deque
 
-from aoc2022 import DayFive
+from aoc2022.day5 import DayFive, StackCollection
 
 part_one_data = (
     (
@@ -8,9 +9,16 @@ part_one_data = (
         "CMZ",
     ),
 )
+drawing_to_stack_quantity = (
+    (
+        " 1   2   3 ",
+        3,
+    ),
+)
 
 
-class DayFive(unittest.TestCase):
+
+class TestDayFive(unittest.TestCase):
     def setUp(self) -> None:
         self.solver = DayFive()
 
@@ -20,3 +28,12 @@ class DayFive(unittest.TestCase):
                 "Testing peeking each stack...", input=input, expected=expected
             ):
                 self.assertEqual(self.solver.part_one(input), expected)
+
+    def test_get_stack_quantity(self):
+        for input, expected in drawing_to_stack_quantity:
+            self.assertEqual(self.solver.get_stack_quantity(input), expected)
+
+
+class TestStackCollection(unittest.TestCase):
+    def setUp(self) -> None:
+        self.stacks = StackCollection(3)

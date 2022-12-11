@@ -28,4 +28,4 @@ class DaySix(SolutionClass):
         return str(self.find_start_of_packet_marker(data))
 
     def part_two(self, data: str) -> str:
-        ...
+        return str(self.find_start_of_packet_marker(data, sub_size=14))

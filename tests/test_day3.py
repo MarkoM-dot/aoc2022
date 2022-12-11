@@ -71,6 +71,8 @@ class TestDayThree(unittest.TestCase):
                 expected=expected,
             ):
                 self.assertEqual(
-                    self.solver.find_common_items(first_compartment, second_compartment),
+                    self.solver.find_common_items(
+                        first_compartment, second_compartment
+                    ),
                     expected,
                 )

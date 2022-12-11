@@ -26,7 +26,7 @@ class BudgetFetch:
         req = urllib.request.Request(url, headers=self._get_cookie())
         return urllib.request.urlopen(req).read().decode()
 
-    def post_answer(self, year: int, day: int, answer: int, part: int) -> str:
+    def post_answer(self, year: int, day: int, answer: str, part: int) -> str:
         url = self._get_url(year, day) + "/answer"
         params = urllib.parse.urlencode({"level": part, "answer": answer})
 

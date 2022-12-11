@@ -51,7 +51,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         help="Which part during the day? 1 or 2. Default is 1.",
     )
     submit_parser.add_argument(
-        "answer", type=int, help="Provide an answer to submit (required)."
+        "answer", type=str, help="Provide an answer to submit (required)."
     )
 
     args = vars(parser.parse_args(argv))

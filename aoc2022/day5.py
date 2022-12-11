@@ -1,6 +1,7 @@
-from pathlib import Path
 from collections import deque
+from pathlib import Path
 from typing import Deque
+
 from .solution_template import SolutionClass
 
 
@@ -47,7 +48,6 @@ class DayFive(SolutionClass):
         move, origin, target = int(line[1]), int(line[3]) - 1, int(line[5]) - 1
         return move, origin, target
 
-
     def init_configuration(self, drawing: list[str]):
         stack_amount = self.get_stack_quantity(drawing.pop())
         stacks = StackCollection(stack_amount)
@@ -57,7 +57,6 @@ class DayFive(SolutionClass):
             stacks.insert(line)
 
         return stacks
-
 
     def part_one(self, data: str) -> str:
         drawing, instruction_set = data.split("\n\n")

@@ -17,7 +17,6 @@ drawing_to_stack_quantity = (
 )
 
 
-
 class TestDayFive(unittest.TestCase):
     def setUp(self) -> None:
         self.solver = DayFive()

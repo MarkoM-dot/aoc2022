@@ -30,6 +30,9 @@ part_one_common_items = (
     ("PmmdzqPrV", "vPwwTWBwg", {"P"}),
 )
 
+part_two_data = (
+    ("vJrwpWtwJgWrhcsFMMfFFhFp\njqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL\nPmmdzqPrVvPwwTWBwg\nwMqvLMZHhHMvwLHjbvcjnnSBnvTQFn\nttgJtRGJQctTZtZT\nCrZsJsPPZsGzwwsLwLmpwMDw\n", 70),
+)
 
 class TestDayThree(unittest.TestCase):
     def setUp(self) -> None:
@@ -43,6 +46,11 @@ class TestDayThree(unittest.TestCase):
                 expected=expected,
             ):
                 self.assertEqual(self.solver.part_one(input), expected)
+
+    def test_part_two(self):
+        for input, expected in part_two_data:
+            with self.subTest("Testing sum of common item types between all three elves...", input=input, expected=expected):
+                self.assertEqual(self.solver.part_two(input), expected)
 
     def test_split_rucksack(self):
         for input, first_compartment, second_compartment in part_one_rucksacks:

@@ -42,4 +42,10 @@ class DayThree(SolutionClass):
         )
 
     def part_two(self, data: str) -> int:
-        ...
+        sack = iter(data.splitlines())
+        items = []
+        for first, second, third in zip(sack, sack, sack):
+            unique_item = self.find_common_items(first, second).intersection(self.find_common_items(second, third))
+            items.append(self.item_priority(*unique_item))
+
+        return sum(items)

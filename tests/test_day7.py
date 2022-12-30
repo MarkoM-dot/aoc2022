@@ -15,6 +15,7 @@ part_two_data = (
     ),
 )
 
+
 class TestDaySeven(unittest.TestCase):
     def setUp(self) -> None:
         self.solver = DaySeven()

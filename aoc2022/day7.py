@@ -133,5 +133,4 @@ class DaySeven(SolutionClass):
         tc.work()
 
         free_space = 30_000_000 - (70_000_000 - tc.file_system.root.size)
-        candidates = [size for _, size in tc.file_system.du() if size >= free_space]
-        return str(min(candidates))
+        return str(min([size for _, size in tc.file_system.du() if size >= free_space]))

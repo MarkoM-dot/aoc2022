@@ -134,4 +134,4 @@ class DaySeven(SolutionClass):
 
         free_space = 30_000_000 - (70_000_000 - tc.file_system.root.size)
         candidates = [size for _, size in tc.file_system.du() if size >= free_space]
-        return str(sorted(candidates)[0])
+        return str(min(candidates))

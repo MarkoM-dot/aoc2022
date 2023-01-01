@@ -65,7 +65,7 @@ class Terrain:
             if above.z >= tree.z:
                 break
             above = above.above
-        
+
         trees_below = 0
 
         while below:

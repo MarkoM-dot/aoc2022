@@ -29,12 +29,9 @@ class Directory:
 
     @property
     def size(self) -> int:
-        size: int = 0
-        if self.files:
-            size += sum((file.size for file in self.files))
-        if self.directories:
-            size += sum((directory.size for directory in self.directories))
-        return size
+        return sum((file.size for file in self.files)) + sum(
+            (directory.size for directory in self.directories)
+        )
 
 
 class FileSystem:

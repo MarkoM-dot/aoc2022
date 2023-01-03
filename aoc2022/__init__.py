@@ -6,6 +6,7 @@ from .day5 import DayFive
 from .day6 import DaySix
 from .day7 import DaySeven
 from .day8 import DayEight
+from .day9 import DayNine
 
 __app_name__ = "Advent of Code Command Line Interface for Answers"
 __version__ = "0.1.0"
@@ -24,4 +25,5 @@ __all__ = [
     "DaySix",
     "DaySeven",
     "DayEight",
+    "DayNine",
 ]

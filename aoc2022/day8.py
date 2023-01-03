@@ -52,41 +52,29 @@ class Terrain:
                 prev = current
 
     def scenic_score(self, tree: Tree) -> int:
-        above = tree.above
-        below = tree.below
-        right = tree.right
-        left = tree.left
-
-        trees_above = 0
+        above, below, right, left = tree.above, tree.below, tree.right, tree.left
+        trees_above = trees_below = trees_right = trees_left = 0
 
         while above:
             trees_above += 1
-
             if above.z >= tree.z:
                 break
             above = above.above
 
-        trees_below = 0
-
         while below:
             trees_below += 1
-
             if below.z >= tree.z:
                 break
             below = below.below
 
-        trees_right = 0
         while right:
             trees_right += 1
-
             if right.z >= tree.z:
                 break
             right = right.right
 
-        trees_left = 0
         while left:
             trees_left += 1
-
             if left.z >= tree.z:
                 break
             left = left.left

@@ -29,8 +29,8 @@ class Directory:
 
     @property
     def size(self) -> int:
-        return sum((file.size for file in self.files)) + sum(
-            (directory.size for directory in self.directories)
+        return sum(file.size for file in self.files) + sum(
+            directory.size for directory in self.directories
         )
 
 
@@ -79,9 +79,6 @@ class FileSystem:
         return self.current.directories + self.current.files
 
     def du(self) -> list[tuple[str, int]]:
-        """
-        Return a list of all the directories providing their name and size as a tuple.
-        """
         du = []
         qu = deque([self.root])
 
@@ -123,7 +120,7 @@ class DaySeven(SolutionClass):
     def part_one(self, data: str) -> str:
         tc = TotalCommander(data)
         tc.work()
-        return str(sum((size for _, size in tc.file_system.du() if size <= 100_000)))
+        return str(sum(size for _, size in tc.file_system.du() if size <= 100_000))
 
     def part_two(self, data: str) -> str:
         tc = TotalCommander(data)

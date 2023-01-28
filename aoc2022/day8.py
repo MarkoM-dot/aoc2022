@@ -82,7 +82,7 @@ class Terrain:
         return trees_above * trees_below * trees_right * trees_left
 
     def max_scenic_score(self) -> int:
-        return max((self.scenic_score(tree) for tree in self.terrain.values()))
+        return max(self.scenic_score(tree) for tree in self.terrain.values())
 
 
 class DayEight(SolutionClass):

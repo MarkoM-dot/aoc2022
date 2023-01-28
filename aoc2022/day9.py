@@ -58,10 +58,14 @@ class Rope:
             "U": Vector(0, 1),
             "D": Vector(0, -1),
         }
+        self.tail_visits = 1
 
     def move(self, direction: str, steps: int):
         for _ in range(steps):
             self.head += self.motions[direction]
+            if not self.tail.is_touching(self.head):
+                self.tail.follow(self.head)
+                self.tail_visits += 1
 
 
 class DayNine(SolutionClass):
@@ -78,7 +82,7 @@ class DayNine(SolutionClass):
                 case [direction, steps]:
                     self.rope.move(direction, int(steps))
                 case _:
-                    raise SyntaxError("Unrecognized syntax...")
+                    raise SyntaxError(f"Unrecognized syntax: {motion}")
         return super().part_one(data)
 
     def part_two(self, data: str) -> int:

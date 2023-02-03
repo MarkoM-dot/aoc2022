@@ -10,7 +10,6 @@ python = "^3.10"
 
 
 [tool.poetry.group.dev.dependencies]
-isort = "^5.10.1"
 ruff = "^0.0.211"
 
 [tool.isort]

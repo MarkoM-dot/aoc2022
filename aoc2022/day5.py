@@ -1,6 +1,5 @@
 from collections import deque
 from pathlib import Path
-from typing import Deque
 
 from .solution_template import SolutionClass
 

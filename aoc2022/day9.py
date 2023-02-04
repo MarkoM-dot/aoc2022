@@ -41,25 +41,11 @@ class Vector:
         return abs(self.x - other.x) <= 1 and abs(self.y - other.y) <= 1
 
     def follow(self, other: Vector):
-        """
-        follow some other vector
-        """
-        if other.y - self.y > 1:
-            self.y += 1
-            if other.x != self.x:
-                self.x = other.x
-        if other.y - self.y < -1:
-            self.y -= 1
-            if other.x != self.x:
-                self.x = other.x
-        if other.x - self.x > 1:
-            self.x += 1
-            if other.y != self.y:
-                self.y = other.y
-        if other.x - self.x < -1:
-            self.x -= 1
-            if other.y != self.y:
-                self.y = other.y
+        sin_x = 0 if other.x == self.x else (other.x - self.x) / abs(other.x - self.x)
+        sin_y = 0 if other.y == self.y else (other.y - self.y) / abs(other.y - self.y)
+
+        self.x += int(sin_x)
+        self.y += int(sin_y)
         return self
 
     @property
@@ -78,6 +64,8 @@ class Rope:
             "D": Vector(0, -1),
         }
         self.tail_visits: set[tuple[int, int]] = {(0, 0),}
+        self.knots: list[Vector] = [Vector() for _ in range(10)]
+        self.knot_tail_visits: set[tuple[int, int]] = set()
 
     def move(self, direction: str, steps: int):
         for _ in range(steps):
@@ -85,6 +73,18 @@ class Rope:
             if not self.tail.is_touching(self.head):
                 self.tail.follow(self.head)
                 self.tail_visits.add(self.tail.coordinates)
+
+    def move_knots(self, direction: str, steps: int):
+        for _ in range(steps):
+            self.knots[0] += self.motions[direction]
+
+            for i in range(1, 10):
+                head = self.knots[i - 1]
+                tail = self.knots[i]
+
+                if not tail.is_touching(head):
+                    tail.follow(head)
+            self.knot_tail_visits.add(self.knots[-1].coordinates)
 
 
 class DayNine(SolutionClass):
@@ -104,5 +104,12 @@ class DayNine(SolutionClass):
                     raise SyntaxError(f"Unrecognized syntax: {motion}")
         return str(len(self.rope.tail_visits))
 
-    def part_two(self, data: str) -> int:
-        return super().part_two(data)
+    def part_two(self, data: str) -> str:
+         for motion in (line.split() for line in data.splitlines()):
+            match motion:
+                case [direction, steps]:
+                    self.rope.move_knots(direction, int(steps))
+                case _:
+                    raise SyntaxError(f"Unrecognized syntax: {motion}")
+         return str(len(self.rope.knot_tail_visits))
+

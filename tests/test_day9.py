@@ -7,7 +7,10 @@ part_one_data = (
         ("R 4\nU 4\nL 3\nD 1\nR 4\nD 1\nL 5\nR 2\nD 2\n", "14"),
 
     )
-part_two_data = (("R 4\nU 4\nL 3\nD 1\nR 4\nD 1\nL 5\nR 2\n", ""),)
+part_two_data = (
+        ("R 4\nU 4\nL 3\nD 1\nR 4\nD 1\nL 5\nR 2\n", "1"),
+        ("R 5\nU 8\nL 8\nD 3\nR 17\nD 10\nL 25\nU 20\n", "36"),
+    )
 
 
 class TestDayNine(unittest.TestCase):
@@ -21,7 +24,6 @@ class TestDayNine(unittest.TestCase):
                 solver = DayNine()
                 self.assertEqual(solver.part_one(input), expected)
 
-    @unittest.skip("Not ready yet...")
     def test_two_one(self):
         for input, expected in part_two_data:
             with self.subTest(
@@ -55,16 +57,16 @@ class TestVector(unittest.TestCase):
         self.assertEqual(self.v.follow(self.w), Vector(0, 0))
 
         moving_vec = self.v + Vector(1, 0)
-        self.assertEqual(self.w.follow(moving_vec), Vector(0, 0))
+        self.assertEqual(self.w.follow(moving_vec), Vector(1, 0))
 
         moving_vec += Vector(0, 1)
-        self.assertEqual(self.w.follow(moving_vec), Vector(0, 0))
-
-        moving_vec += Vector(1, 0)
         self.assertEqual(self.w.follow(moving_vec), Vector(1, 1))
 
         moving_vec += Vector(1, 0)
         self.assertEqual(self.w.follow(moving_vec), Vector(2, 1))
+
+        moving_vec += Vector(1, 0)
+        self.assertEqual(self.w.follow(moving_vec), Vector(3, 1))
 
 class TestRope(unittest.TestCase):
     def setUp(self) -> None:

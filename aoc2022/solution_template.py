@@ -8,15 +8,15 @@ class SolutionClass(ABC):
         ...
 
     @abstractmethod
-    def part_one(self, data: str) -> int:
+    def part_one(self, data: str) -> str:
         ...
 
     @abstractmethod
-    def part_two(self, data: str) -> int:
+    def part_two(self, data: str) -> str:
         ...
 
 
-def solutionizer(solver: SolutionClass) -> tuple[int, int]:
+def solutionizer(solver: SolutionClass) -> tuple[str, str]:
     """
     Returns the answers for part one and part two given solution class.
     """
